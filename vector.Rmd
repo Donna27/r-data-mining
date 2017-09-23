@@ -1,0 +1,46 @@
+---
+title: "R Notebook"
+output: html_notebook
+---
+Beginning R
+```{r}
+plot(cars)
+```
+
+Vertor Data type
+```{r}
+a = c(3,7.9,11.2,14.7)
+b = c(2.5,"May")
+c = c(TRUE,24L)
+d = c(TRUE,24)
+class(a)
+class(b)
+class(c)
+class(d)
+length(a)
+length(b)
+length(c)
+length(d)
+
+1:20
+rep(12,5)
+seq(from = 20, to = 50 , by =3)
+seq(from = 20, to = 50 , length.out =  15)
+z = vector(mode = "numeric" , length = 20)
+z
+```
+
+```{r}
+my_df = data.frame(
+  id = c(11L,12L,13L),
+  name =c("John", "Jenny","Jane"),
+  age = c(22,20,22)
+)
+
+my_df
+class(my_df)
+
+str(my_df)
+summary((my_df))
+```
+
