@@ -1,0 +1,23 @@
+---
+title: "Linear Regression"
+output: html_notebook
+---
+Linear Regression
+```{r}
+data.train = read.csv("Programming with R for Beginners/dataset/heating_oil_train.csv")
+data.train
+
+# create model
+# Heating oil column
+model = lm(Heating_Oil~., data=data.train)
+model
+# load data for test
+data.test = read.csv("Programming with R for Beginners/dataset/heating_oil_test.csv")
+data.test
+# predit data from model
+p = predict(model,data.test,type="class")
+data.test$predit = p
+data.test
+# write predit data to file
+write.csv(data.test,file = "Programming with R for Beginners/predit/predit_heating.csv")
+```
