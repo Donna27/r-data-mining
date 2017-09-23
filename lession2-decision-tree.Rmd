@@ -1,0 +1,23 @@
+---
+title: "Decision Tree"
+output: html_notebook
+---
+Decision Tree
+```{r}
+kyp.train = read.csv("Programming with R for Beginners/dataset/kyphosis_train.csv")
+kyp.train
+
+fit = rpart(Kyphosis ~ Age + Number + Start, method="class", data=kyp.train)
+fit
+
+plot(fit, uniform=TRUE, main="Classification Tree for Kyphosis")
+text(fit, use.n=TRUE, all=TRUE, cex=0.8)
+
+kyp.test = read.csv("Programming with R for Beginners/dataset/kyphosis_test.csv")
+kyp.test
+p = predict(fit,kyp.test,type="class")
+kyp.test$predit = p
+kyp.test
+# write predit data to file
+write.csv(kyp.test,file = "Programming with R for Beginners/predit/predit_test.csv")
+```
